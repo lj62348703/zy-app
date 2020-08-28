@@ -1,0 +1,147 @@
+{
+	"pages": [
+
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "生活频道首页"
+			}
+		},
+		{
+			"path": "pages/index/index1",
+			"style": {
+				"navigationBarTitleText": "生活频道首页"
+			}
+		},
+		{
+			"path": "pages/product/product",
+			"style": {
+				"navigationBarTitleText": "详情展示"
+			}
+		}, {
+			"path": "pages/set/set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/userinfo/userinfo",
+			"style": {
+				"navigationBarTitleText": "修改资料"
+			}
+		}, 
+		{
+			"path": "pages/detail/articleDetail",
+			"style": {
+				"navigationBarTitleText": "视频"
+			}
+		}, 
+		{
+			"path": "pages/answer/answer",
+			"style": {
+				"navigationBarTitleText": "刷题"
+			}
+		},{
+			"path": "pages/gift/gift",
+			"style": {
+				"navigationBarTitleText": "0元购/抽奖中心"
+			}
+		},{
+			"path": "components/list",
+			"style": {
+				"navigationBarTitleText": "列表"
+			}
+		},{
+			"path": "pages/index/index2",
+			"style": {
+				"navigationBarTitleText": "学习频道首页"
+			}
+		},{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "优惠购"
+			}
+			
+		}, {
+			"path": "pages/public/login",
+			"style": {
+				"navigationBarTitleText": "登陆"
+			}
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		}, {
+			"path": "pages/money/money",
+			"style": {}
+		}, {
+			"path": "pages/order/createOrder",
+			"style": {
+				"navigationBarTitleText": "创建订单"
+			}
+		}, {
+			"path": "pages/address/address",
+			"style": {
+				"navigationBarTitleText": "收货地址"
+			}
+		}, {
+			"path": "pages/address/addressManage",
+			"style": {
+				"navigationBarTitleText": "地址管理"
+			}
+		}, {
+			"path": "pages/money/pay",
+			"style": {
+				"navigationBarTitleText": "支付"
+			}
+		},
+		{
+			"path": "pages/money/paySuccess",
+			"style": {
+				"navigationBarTitleText": "支付成功"
+			}
+		}
+	    ,{
+            "path" : "pages/notice/notice",
+            "style" : {
+				"navigationBarTitleText": "通知"
+			}
+        }
+        ,{
+            "path" : "pages/category/category",
+            "style" : {
+				"navigationBarTitleText": "商品分类"
+			}
+        }
+		,{
+		    "path" : "pages/category/category2",
+		    "style" : {
+				"navigationBarTitleText": "视频分类"
+			}
+		}
+        ,{
+            "path" : "pages/product/list",
+            "style" : {
+			}
+        }
+
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "精彩生活",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#f8f8f8"
+	}
+	
+}

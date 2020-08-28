@@ -1,0 +1,26 @@
+{
+  "titleNView": {
+    "type": "transparent",
+    "buttons": [
+      {
+        "fontSrc": "/static/css/iconfont.ttf",
+        "text": " &#xe64a;",
+        "fontSize": "40",
+        "float": "left",
+        "width": "80px",
+        "margin-left": "20px",
+        "background": "rgba(0,0,0,0)"
+      },
+      {
+        "fontSrc": "/static/css/iconfont.ttf",
+        "text": "&#xe642;",
+        "fontSize": "40",
+        "color": "#303133",
+        "width": "60px",
+        "float": "right",
+        "background": "rgba(0,0,0,0)"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
