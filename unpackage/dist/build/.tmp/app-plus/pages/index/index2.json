@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "学习首页",
+  "usingComponents": {
+    "bw-swiper": "/wxcomponents/bw-swiper/bw-swiper"
+  }
+}

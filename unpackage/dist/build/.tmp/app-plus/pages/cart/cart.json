@@ -1,0 +1,34 @@
+{
+  "navigationBarTitleText": "优惠购",
+  "titleNView": {
+    "type": "transparent",
+    "searchInput": {
+      "backgroundColor": "rgba(231, 231, 231,.7)",
+      "borderRadius": "16px",
+      "placeholder": "请输入产品 如：纸巾",
+      "disabled": true,
+      "placeholderColor": "#606266"
+    },
+    "buttons": [
+      {
+        "fontSrc": "/static/yticon.ttf",
+        "text": "",
+        "fontSize": "26",
+        "color": "yellow",
+        "float": "left",
+        "background": "rgba(0,0,0,0)"
+      },
+      {
+        "fontSrc": "/static/yticon.ttf",
+        "text": "",
+        "fontSize": "27",
+        "color": "yellow",
+        "background": "rgba(0,0,0,0)",
+        "redDot": true
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-number-box": "/components/uni-number-box"
+  }
+}

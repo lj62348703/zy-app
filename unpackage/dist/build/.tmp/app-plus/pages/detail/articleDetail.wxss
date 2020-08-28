@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.m-t {
+  margin-top: 16rpx;
+}
+.f-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 140rpx;
+  padding: 6rpx 30rpx 8rpx;
+  background: #fff;
+}
+.f-header image {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+}
+.f-header .tit-box {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.f-header .tit {
+    font-size: 34rpx;
+    color: #font-color-dark;
+    line-height: 1.3;
+}
+.f-header .tit2 {
+    font-size: 24rpx;
+    color: #909399;
+}
+.f-header .iconfont {
+    font-size: 52rpx;
+    color: #909399;
+}
+/* 视频推荐 */
+.video-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.video-section .guess-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 98%;
+    padding-bottom: 40rpx;
+}
+.video-section .guess-item:nth-child(2n+1) {
+      margin-right: 4%;
+}
+.video-section .image-wrapper {
+    width: 100%;
+    height: 330rpx;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.video-section .image-wrapper video {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+}
+.video-section .title {
+    font-size: 28rpx;
+    color: #303133;
+    line-height: 40rpx;
+}
+.video-section .price {
+    width: 100%;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fa436a;
+    line-height: 40rpx;
+    vertical-align: middle;
+}
+
