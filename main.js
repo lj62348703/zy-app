@@ -51,13 +51,17 @@ App.mpType = 'app';
 
 /* 当前模式  */
 App.appStat =  1;// 1 生活  2 学习   
-App.text1 = "0元购";
+App.text1 = "优惠券";
 App.text2 = "生活";
 App.text3 = "抽奖";
+
 App.active =  0;//当前活动标签
 
 App.tokenImageCode = "";//验证码
-Vue.prototype.basePath = 'http://127.0.0.1:8848';
+Vue.prototype.basePath = 'http://192.168.43.181:8848';
+
+App.active =  0;
+
 
 
 const app = new Vue({

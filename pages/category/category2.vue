@@ -4,6 +4,9 @@
 			<view v-for="item in flist" :key="item.id" class="f-item b-b" :class="{active: item.id === currentId}" @click="tabtap(item)">
 				{{item.name}}
 			</view>
+			
+			<!-- 分割底部导航专用 -->
+			<view style="width: 100px;height: 110px;"></view>
 		</scroll-view>
 		<scroll-view scroll-with-animation scroll-y class="right-aside" @scroll="asideScroll" :scroll-top="tabScrollTop">
 			<view v-for="item in slist" :key="item.id" class="s-list" :id="'main-'+item.id">
@@ -15,9 +18,11 @@
 					</view>
 				</view>
 			</view>
+			
+			<!-- 分割底部导航专用 -->
+			<view style="width: 100px;height: 110px;"></view>
 		</scroll-view>
 	<!-- 底部导航 -->
-		<view style="height: 110px;"></view>
 		<Tab></Tab>
 	</view>
 </template>

@@ -68,6 +68,16 @@
 				"navigationBarTitleText": "登陆"
 			}
 		}, {
+			"path": "pages/public/reg",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},{
+			"path": "pages/public/forget",
+			"style": {
+				"navigationBarTitleText": "修改/找回密码"
+			}
+		},{
 			"path": "pages/user/user",
 			"style": {
 				"navigationBarTitleText": "个人中心"
@@ -128,6 +138,12 @@
 		    "path" : "pages/category/category2",
 		    "style" : {
 				"navigationBarTitleText": "视频分类"
+			}
+		}
+        ,{
+		    "path" : "pages/discount/discount",
+		    "style" : {
+				"navigationBarTitleText": "折扣商品/优惠券"
 			}
 		}
         ,{

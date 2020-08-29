@@ -4,9 +4,9 @@
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
-			<view class="left-top-sign">用户登陆</view>
+			<view class="left-top-sign">找回/修改密码</view>
 			<view class="welcome">
-				欢迎回来！
+				修改密码
 			</view>
 			<view class="input-content">
 				<view class="input-item">
@@ -17,6 +17,7 @@
 						placeholder="请输入手机号码"
 						maxlength="11"
 					/>
+					<button @click="getCode">获取验证码</button>
 				</view>
 				<view class="input-item">
 					<text class="tit">密码</text>
@@ -30,6 +31,17 @@
 					/>
 				</view>
 				<view class="input-item">
+					<text class="tit">确认密码</text>
+					<input 
+						type="password" 
+						placeholder="6-18位不含特殊字符的数字、字母组合"
+						placeholder-class="input-empty"
+						maxlength="18"
+						password 
+						v-model="password2"
+					/>
+				</view>
+				<view class="input-item">
 					<text class="tit">验证码</text>
 					<input 
 						type="text" 
@@ -37,21 +49,20 @@
 						maxlength="4"
 						v-model="imageCode"
 					/>
-					<image @click="getImage" :src="imgUrl"></image>
 				</view>
 			</view>
-			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
+			<button class="confirm-btn" @click="toLogin" :disabled="logining">修改密码</button>
 			<view class="forget-section"  @click="toForget">
 				忘记密码?
 			</view>
 		</view>
 		<view class="register-section">
-			还没有账号?
-			<text @click="toRegist">马上注册</text>
+			已经有账号?
+			<text @click="toRegist">点击登陆</text>
 		</view>
 		
-		<!-- 底部导航 -->
-		<view style="height: 110px;"></view>
+		<!-- 分割底部导航专用 -->
+		<view style="width: 100px;height: 160px;"></view>
 		<Tab></Tab>
 	</view>
 </template>
@@ -68,61 +79,37 @@
 			return {
 				mobile: '',
 				password: '',
+				password2: '',
 				logining: false,
 				imgUrl: "",
 				imageCode:"",
+				userNike:"",
 			}
 		},
 		onLoad(){
-			this.imgUrl = this.basePath+'/image.action?t='+Math.random();
+			//this.imgUrl = this.basePath+'/image.action?t='+Math.random();
 		},
 		methods: {
-			toRegist(){
-				uni.redirectTo({
-					url: '/pages/public/reg'
-				})
-			},
-			toForget(){
-				uni.redirectTo({
-					url: '/pages/public/forget'
-				})
-			},
-			async toLogin(){
-				this.logining = true;
+			getCode(){
 				uni.request({//加载文章
-					url: this.basePath+'/login/'+this.mobile+'/'+this.password+'/'+this.imageCode,
+					url: this.basePath+'/sendCode?userTelephone='+this.mobile,
 					method: 'POST',
 					withCredentials: true,
 					success: res => {//请求成回调函数
 						let result = res.data;
 						if(result.code == 1){//成功
-							uni.setStorageSync('tokenInfo', result.data.tokenInfo);
-							uni.setStorageSync('userName', result.data.userName);
-							uni.setStorageSync('userNike', result.data.userNike);
-							
-							var pages = getCurrentPages(); // 当前页面
-							var beforePage = pages[pages.length - 2]; // 前一个页面
-							console.log(beforePage.route)
-							if(pages.size < 2){
-								uni.redirectTo({
-									url: '/pages/index/index'
-								})
-								console.log(1111)
-							}else if(beforePage.route.indexOf("reg") > 0){//上一页是注册页面跳转到首页
-								uni.redirectTo({
-									url: '/pages/index/index'
-								})
-								console.log(22222)
-							}else{//上一页不是注册页面跳转回登陆前的页面
-								uni.redirectTo();
-							}
+							uni.showToast({
+								 title: '验证码发送成功',
+								 duration: 1000,
+								 icon:'success'
+							})
 						}else if(result.code != 1){
 							uni.showToast({
 								 title: result.msg,
 								 duration: 1000,
 								 icon:'loading'
 							})
-							console.log(333333)
+							console.log(result.data)
 						}else{
 							uni.showToast({
 								 title: '服务器错误',
@@ -134,12 +121,53 @@
 					},
 				});
 			},
-			getImage(event){//刷新验证码
-				uni.navigateTo({
+			toForget(){
+				uni.redirectTo({
+					url: '/pages/public/forget'
+				})
+			},
+			toRegist(){
+				uni.redirectTo({
 					url: '/pages/public/login'
 				})
+			},
+			async toLogin(){
+				this.logining = true;
+				uni.request({//加载文章
+					url: this.basePath+'/changePwd?userPwd='+this.password+'&userTelephone='+this.mobile+'&imageCode='+this.imageCode,
+					method: 'POST',
+					withCredentials: true,
+					success: res => {//请求成回调函数
+						let result = res.data;
+						if(result.code == 1){//成功
+							uni.showToast({
+								 title: '修改密码成功',
+								 duration: 1000,
+								 icon:'success',
+								 success:function(){
+									 uni.redirectTo({
+									 	url: '/pages/public/login'
+									 })
+								 }
+							})
+						}else if(result.code != 1){
+							uni.showToast({
+								 title: result.msg,
+								 duration: 1000,
+								 icon:'loading'
+							})
+							console.log(result.data)
+						}else{
+							uni.showToast({
+								 title: '服务器错误',
+								 duration: 1000,
+								 icon:'loading'
+							})
+						}
+						this.logining = false;
+					},
+				});
 			}
-			
 		},
 		//导入插件组件
 		components:{
@@ -157,7 +185,6 @@
 		padding-top: 25px;
 		position:relative;
 		width: 100vw;
-		height: 100vh;
 		overflow: hidden;
 		background: #fff;
 	}
@@ -252,12 +279,16 @@
 			color: $font-color-dark;
 			width: 100%;
 		}	
-		image{
+		button{
 			width: 200upx;
-			height: 80upx;
+			height: 70upx;
+			font-size: 16px;
 			position: absolute;
 			left: 400upx;
-			cursor: pointer;
+			line-height: 70upx;
+			border-radius: 20px;
+			background: #4CD964;
+			color: #fff;
 		}
 	}
 

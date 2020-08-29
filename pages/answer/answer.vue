@@ -102,7 +102,7 @@
 			},
 			
 			navToList(tid){
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/detail/askDetail?article_type_id='+tid
 				})
 			},

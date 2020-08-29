@@ -11,7 +11,7 @@
 		},
 		globalData: {  
 			appStat: 1,// 1 生活  2 学习   
-			text1:"0元购",
+			text1:"优惠券",
 			text2:"生活",
 			text3:"抽奖",
 			active: 0

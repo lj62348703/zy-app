@@ -80,7 +80,7 @@
 					index
 				});
 				// #endif
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/notice/notice'
 				})
 			}
@@ -99,7 +99,7 @@
 				if(!this.hasLogin){
 					url = '/pages/public/login';
 				}
-				uni.navigateTo({  
+				uni.redirectTo({  
 					url
 				})  
 			}, 

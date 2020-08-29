@@ -334,7 +334,7 @@
 				this.favorite = !this.favorite;
 			},
 			buy(){
-				uni.navigateTo({
+				uni.redirectTo({
 					url: `/pages/order/createOrder`
 				})
 			},
